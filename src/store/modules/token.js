@@ -3,8 +3,8 @@ import _ from "lodash";
 import axios from "axios";
 
 //axios.defaults.baseURL = process.env.API_BASE_URL;
-//axios.defaults.baseURL = "http://127.0.0.1:3838/imapi/api/";
-axios.defaults.baseURL = "/imapi/api/";
+axios.defaults.baseURL = "http://127.0.0.1:3333/imapi/api/";
+//axios.defaults.baseURL = "/imapi/api/";
 
 const state = {
   token: sessionStorage.getItem("access_token") || null,
@@ -41,7 +41,7 @@ const actions = {
   retrieveToken: (context, credentials) => {
     return new Promise((resolve, reject) => {
       axios
-        .post("auth/login", credentials)
+        .get("auth/login", credentials)
         .then((response) => {
           const token = response.data.token;
           Vue.prototype.$axios.defaults.headers.common["Authorization"] =

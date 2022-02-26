@@ -2,11 +2,11 @@
   <b-container fluid class="container">
     <b-row>
       <b-col md="12" class="text-center top-30">
-        <h4>Welcome to Internship Management Application</h4>
+        <h4>Welcome to InternManager Application</h4>
       </b-col>
       <b-col md="4" offset-md="4" class="">
         <div class="login">
-          <h4 class="mt-3 text-center">Log In</h4>
+          <h4 class="mt-3 text-center">Sign In</h4>
           <hr class="mb-0" />
           <b-form class="p-4" @submit.prevent="login">
             <b-form-group
@@ -20,7 +20,7 @@
                 class="input-field"
                 v-model="user.email"
                 type="text"
-                placeholder="Enter username or email id"
+                placeholder="Enter email id"
                 required
               ></b-form-input>
             </b-form-group>
@@ -80,7 +80,6 @@ export default {
       this.spin = true;
       this.error = null;
       const iv = "sinasinasisinaaa";
-      console.log("store Intern", this.$store);
       const cipher = CryptoJS.AES.encrypt(this.user.password, CryptoJS.enc.Utf8.parse("82f2ceed4c503896c8a291e560bd4325"), {
         iv: CryptoJS.enc.Utf8.parse(iv),
         mode: CryptoJS.mode.CBC
@@ -91,10 +90,11 @@ export default {
         .dispatch("retrieveToken", this.user)
         .then(response => {
           let role = response.data.role;
-          if (role == "admin") {
-            this.loading = false;
-            this.$router.push({ name: "dashboard" });
-          } else if (role == "user") {
+          // if (role == "admin") {
+          //   this.loading = false;
+          //   this.$router.push({ name: "dashboard" });
+          // } else
+           if (role == "user") {
             this.loading = false;
             this.$router.push({ name: "student-dashboard" });
           } else if (role == "faculty") {
