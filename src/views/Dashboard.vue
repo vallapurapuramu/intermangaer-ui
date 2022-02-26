@@ -3,7 +3,6 @@
    <Loader v-bind:spin="spin"></Loader>
     <b-container fluid>
       <b-row class="bg-white mt-3" v-if="!spin">
-        
         <b-col sm="6" class="mb-3">
           <b-row>
             <b-col

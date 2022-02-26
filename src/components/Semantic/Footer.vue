@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">Learning & Teaching Center | Northwest Missouri State University</div>
+  <div class="footer">GDP Project</div>
 </template>
 
 <style scoped>
