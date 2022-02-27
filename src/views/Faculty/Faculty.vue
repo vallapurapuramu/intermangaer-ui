@@ -28,18 +28,7 @@ export default {
     //await this.getData();
   },
  methods:{
-    // async getData(){
-
-    //   console.log("in clicked");
-    //   this.isagreement = this.$store.getters.userDetails.isagreement;
-    //   if(this.isagreement==0)
-    //   {
-    //     this.$router.push({ name: "agreement" });
-    //   }
-    //   else{
-    //     this.$router.push({ name: "student-dashboard" });
-    //   }
-    // },
+    
  }
 };
 </script>

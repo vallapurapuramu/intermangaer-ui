@@ -134,7 +134,7 @@ router.beforeEach((to, from, next) => {
           next();
         } 
         else if(role === "user"){
-           if(to.path != "/student-dashboard" && to.path!="/personal-info" && to.path!="/applyform" && to.path!="/agreement" && to.path!="/applyform-edit"){
+           if(to.path != "/student-dashboard" && to.path!="/personal-info" && to.path!="/applyform"  && to.path!="/applyform-edit"){
           
            next({ name: "student-dashboard" });
           }
