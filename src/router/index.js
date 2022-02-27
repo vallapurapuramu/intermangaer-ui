@@ -136,6 +136,7 @@ router.beforeEach((to, from, next) => {
       next({ name: "login" });
     } else {
       let role = store.getters.userDetails.role;
+      console.log(store.getters.userDetails.role,"role in routes js ")
       if (to.matched.some((record) => record.meta.isAdmin)) {
         if (role === "admin") {
            if(to.path!="/dashboard"){

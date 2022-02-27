@@ -41,7 +41,7 @@ const actions = {
   retrieveToken: (context, credentials) => {
     return new Promise((resolve, reject) => {
       axios
-        .get("auth/login", credentials)
+        .post("auth/login", credentials)
         .then((response) => {
           const token = response.data.token;
           Vue.prototype.$axios.defaults.headers.common["Authorization"] =
@@ -53,8 +53,8 @@ const actions = {
           ]);
 
           sessionStorage.setItem("access_token", "Bearer " + token);
-          localStorage.setItem("user_details", JSON.stringify(userDetails));
-          console.log(userDetails)
+          localStorage.setItem("user_details", JSON.stringify(userDetails.data));
+          userDetails=userDetails.data;
           context.commit("saveUserAuth", { token, userDetails });
           resolve(response);
         })

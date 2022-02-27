@@ -795,14 +795,15 @@ export default {
       this.form.firstName = null;
       this.form.lastName = null;
       await this.$axios
-        .post(`faculty/addFaculty/${this.form.facultyEmail}`)
+        .get(`verifyfaculty/${this.form.facultyEmail}`)
         .then((response) => {
           if (response.error) {
             this.msg.fEmail = "Invalid email address";
           } else {
-            this.form.facultyId = response.data.id;
-            this.form.firstName = response.data.firstname;
-            this.form.lastName = response.data.lastname;
+            console.log(response,"sdkfbihfb");
+            this.form.facultyId = response.data[0].id;
+            this.form.firstName = response.data[0].firstname;
+            this.form.lastName = response.data[0].lastname;
           }
         })
         .catch((error) => {

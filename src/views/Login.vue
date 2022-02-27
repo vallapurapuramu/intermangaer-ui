@@ -89,14 +89,17 @@ export default {
       this.$store
         .dispatch("retrieveToken", this.user)
         .then(response => {
-          let role = response.data.role;
-          // if (role == "admin") {
-          //   this.loading = false;
-          //   this.$router.push({ name: "dashboard" });
-          // } else
-           if (role == "user") {
+          console.log(response,"response data")
+          let role = response.data.data.role;
+          console.log(role,"hgdytdfgh")
+          if (role == "admin") {
             this.loading = false;
-            this.$router.push({ name: "student-dashboard" });
+            this.$router.push({ name: "dashboard" });
+          } else
+           if (role == "user") {
+             console.log("usrrsdsxmncsdgfjswgdfkjhgfih ====  data ",role)
+            this.loading = false;
+            this.$router.push({ name: "faculty" });
           } else if (role == "faculty") {
             this.loading = false;
             this.$router.push({ name: "faculty" });
