@@ -113,31 +113,7 @@
         @ok="handleOk(row.item.id)"
         @hide="resetmodify"
       >Are you Sure want to delete this record ? 
-        <!--<b-row>
-          <b-col
-            ><a style="font-weight: bold;">Current Application Status: </a>{{currentStatus}}
-            <br />
-            <a style="font-weight: bold;">Older Comments</a>
-            <br>
-            <ul style="margin-left: 18px">
-              <li v-for="(value, key) in commentsList" :key="key">
-                {{ value.updated }}: {{ value.commentGiven }}
-              </li>
-            </ul></b-col
-          >
-          <br />
-        </b-row>
-        <b-row>
-          <b-col>
-            <label for="exampleFormControlTextarea1" style="font-weight: bold;">Comments</label>
-            <textarea
-              name="comment"
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              v-model="commentData.comments"
-              rows="3"
-            ></textarea></b-col
-        ></b-row>-->
+       
       </b-modal>
           </div>
         </template>
@@ -308,16 +284,7 @@ export default {
         employee: "",
         maindata: {},
       },
-      /**comments: {
-        id: "",
-        title: "",
-        content: "",
-      },
-      reject: {
-        id: "",
-        title: "",
-        content: "",
-      },**/
+      
       modify: {
         id: "",
         title: "",
@@ -353,25 +320,7 @@ export default {
         });
     },
 
-    /**resultQuery() {
-      if (this.selectedValue) {
-        return this.sampleData.filter((item) => {
-          return this.selectedValue
-            .toLowerCase()
-            .split(" ")
-            .every(
-              (v) =>
-                item.name.toLowerCase().includes(v) ||
-                item.major.toLowerCase().includes(v)
-            );
-        });
-      } else {
-        return this.sampleData;
-      }
-    },**/
-    /**rows() {
-      return this.sampleData.length;
-    },**/
+    
   },
 
   methods: {
