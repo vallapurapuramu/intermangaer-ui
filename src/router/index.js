@@ -83,18 +83,7 @@ const routes = [
     component:() =>
       import("../views/Student/StudentForm.vue"),
   },
-  {
-    path: "/agreement",
-    name: "agreement",
-    meta: {
-      requiresAuth: true,
-      isAdmin:true,
-
-    },
-    component: () =>
-      import(/* webpackChunkName: "term" */ "../views/Student/InternshipAgreement.vue"),
-  },
- 
+  
   {
     path: "/applyform-edit",
     name: "applyform-edit",

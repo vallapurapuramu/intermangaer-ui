@@ -2,7 +2,6 @@ import Vue from "vue";
 import _ from "lodash";
 import axios from "axios";
 
-//axios.defaults.baseURL = process.env.API_BASE_URL;
 axios.defaults.baseURL = "http://127.0.0.1:3333/imapi/api/";
 //axios.defaults.baseURL = "/imapi/api/";
 
@@ -27,9 +26,6 @@ const mutations = {
     // console.log(payload,"-----------payload")
     state.token = payload.token;
     state.userDetails = payload.userDetails;
-  },
-  saveInternshipAgreement:(state) =>{
-    state.userDetails.isagreement =1;
   },
   destroyUserAuth: (state) => {
     state.token = null;
@@ -66,13 +62,6 @@ const actions = {
     });
   },
 
-  updateIsAgreement({ commit }) {
-    return new Promise((resolve, reject) => {
-      console.log("in updateIsAgreement");
-      commit("saveInternshipAgreement");
-      resolve();
-    });
-  },
 
   destroyToken({ commit }) {
     return new Promise((resolve, reject) => {

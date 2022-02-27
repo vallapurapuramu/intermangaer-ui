@@ -14,7 +14,6 @@ require('dotenv').config();
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ resave: true, saveUninitialized: true, secret: 'nwmsu-cite' }));
 app.use(cors());
 app.use(express.json());
 app.set('views', path.join(__dirname, 'dist'));
