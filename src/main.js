@@ -60,8 +60,8 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 // Integrating axios with vue
 Vue.prototype.$axios = axios.create({
-    baseURL: process.env.VUE_APP_API_BASE_URL || "http://127.0.0.1:3333/imapi/api/",
-    //baseURL: "/imapi/api/",
+    //baseURL: process.env.VUE_APP_API_BASE_URL || "http://127.0.0.1:3333/imapi/api/",
+    baseURL: "https://intermanager-backend.herokuapp.com/imapi/api/",
     headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
