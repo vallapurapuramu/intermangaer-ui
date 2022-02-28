@@ -3,7 +3,7 @@ import _ from "lodash";
 import axios from "axios";
 
 //axios.defaults.baseURL = "http://127.0.0.1:3333/imapi/api/";
- axios.defaults.baseURL: "https://intermanager-backend.herokuapp.com/imapi/api/",
+ axios.defaults.baseURL= "https://intermanager-backend.herokuapp.com/imapi/api/",
 
 const state = {
   token: sessionStorage.getItem("access_token") || null,
