@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/intern-manager-ui/dist'
+    publicPath: '/intermanager-ui/dist'
 }
