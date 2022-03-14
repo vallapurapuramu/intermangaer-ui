@@ -48,6 +48,7 @@
                 Login
                 <font-awesome-icon icon="sign-in-alt" class="m-t-4" />
               </b-button>
+              <a class="linkbtn" href="register#/register">Register <font-awesome-icon icon="user-plus" class="m-t-4" /></a>
             </div>
           </b-form>
         </div>
@@ -57,9 +58,8 @@
 </template>
 
 <script>
-import Loader from "../components/Utils/Loader.vue";
-import CryptoJS from "crypto-js";
 
+import CryptoJS from "crypto-js";
 export default {
   name: "Login",
   components: {
@@ -77,27 +77,23 @@ export default {
   },
   methods: {
     login() {
+
+      //this.$auth.loginWithRedirect();
+
       this.spin = true;
       this.error = null;
       const iv = "sinasinasisinaaa";
-      const cipher = CryptoJS.AES.encrypt(this.user.password, CryptoJS.enc.Utf8.parse("82f2ceed4c503896c8a291e560bd4325"), {
-        iv: CryptoJS.enc.Utf8.parse(iv),
+     const cipher = CryptoJS.AES.encrypt(this.user.password, CryptoJS.enc.Utf8.parse("82f2ceed4c503896c8a291e560bd4325"), {
+       iv: CryptoJS.enc.Utf8.parse(iv),
         mode: CryptoJS.mode.CBC
       });
 
-      this.user.password = cipher.toString();
+     this.user.password = cipher.toString();
       this.$store
         .dispatch("retrieveToken", this.user)
         .then(response => {
-          console.log(response,"response data")
           let role = response.data.data.role;
-          console.log(role,"hgdytdfgh")
-          if (role == "admin") {
-            this.loading = false;
-            this.$router.push({ name: "dashboard" });
-          } else
            if (role == "user") {
-             console.log("usrrsdsxmncsdgfjswgdfkjhgfih ====  data ",role)
             this.loading = false;
             this.$router.push({ name: "faculty" });
           } else if (role == "faculty") {
@@ -121,7 +117,13 @@ export default {
   border-radius: 10px;
   margin-bottom: 69px;
 }
-
+a.linkbtn {
+    color: white;
+    background: #007bff;
+    padding: 6px;
+    margin: 10px;
+    border-radius: 4px;
+}
 .m-t-4 {
   margin-top: 4px;
 }

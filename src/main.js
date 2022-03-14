@@ -15,6 +15,8 @@ import 'leaflet/dist/leaflet.css';
 // import leaflet from 'leaflet'
 import App from "./App.vue";
 import router from "./router";
+import { domain, clientId } from "../auth_config.json";
+import { Auth0Plugin } from "./auth";
 import VueSimpleAccordion from 'vue-simple-accordion';
 import 'vue-simple-accordion/dist/vue-simple-accordion.css';
 import store from './store';
@@ -31,6 +33,18 @@ require('dotenv').config()
 Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue);
+Vue.use(Auth0Plugin, {
+    domain,
+    clientId,
+    onRedirectCallback: appState => {
+      router.push(
+        appState && appState.targetUrl
+          ? appState.targetUrl
+          : window.location.pathname
+      );
+    }
+  });
+
 Vue.use(IconsPlugin);
 Vue.use(VueSimpleAccordion, {
     tags: {
