@@ -67,9 +67,10 @@ export default {
   data() {
     return {
       user: {
-        UserName: "",
+        // UserName: "",
         email: "",
         password: ""
+  
       },
       error: null,
       spin: false

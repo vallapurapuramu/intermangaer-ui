@@ -115,6 +115,7 @@ export default{
                 firstname:"",
                 lastname:"",
                 email:"",
+                repassword:"",
                 password:""
                 
             },
@@ -123,8 +124,12 @@ export default{
         };
     },
     methods:{
+      /**
+       * @vuese
+       * This methods takes user details and used for registration
+       */
         async register(){
-         await this.$axios.post("auth/register",this.user).then((response)=>{
+        await this.$axios.post("auth/register",this.user).then((response)=>{
             console.log("edited form data.....",this.user);
           this.$root.$bvToast.toast(`Registered  successfully`, {
             variant: "success",
