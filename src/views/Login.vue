@@ -77,6 +77,10 @@ export default {
     };
   },
   methods: {
+      /**
+       * @vuese
+       * This methods takes to the login page
+       */
     login() {
 
       //this.$auth.loginWithRedirect();
