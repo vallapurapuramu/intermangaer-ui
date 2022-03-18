@@ -9,6 +9,7 @@ import Dashboard from "../views/Dashboard.vue";
 import Faculty from "../views/Faculty/Faculty.vue";
 import StudentDashboard from "../views/Student/StudentDashboard.vue";
 import Applications from "../views/Applications.vue";
+import Register from "../views/Register.vue";
 import { isBoolean } from 'lodash';
 import { name } from 'store/storages/cookieStorage';
 
@@ -20,6 +21,14 @@ const routes = [
     path: "/login",
     name: "login",
     component: Login,
+    meta: {
+      requiresVisitor: true,
+    }
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: Register,
     meta: {
       requiresVisitor: true,
     }
@@ -83,18 +92,7 @@ const routes = [
     component:() =>
       import("../views/Student/StudentForm.vue"),
   },
-  {
-    path: "/agreement",
-    name: "agreement",
-    meta: {
-      requiresAuth: true,
-      isAdmin:true,
-
-    },
-    component: () =>
-      import(/* webpackChunkName: "term" */ "../views/Student/InternshipAgreement.vue"),
-  },
- 
+  
   {
     path: "/applyform-edit",
     name: "applyform-edit",
@@ -132,10 +130,15 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (!store.getters.loggedIn && to.path != '/login') {
-      next({ name: "login" });
-    } else {
+    if (!store.getters.loggedIn && to.path != '/register') {
+      next({ name: "register" });
+    }
+    else if (!store.getters.loggedIn && to.path != '/register') {
+      next({ name: "register" });
+    } 
+    else {
       let role = store.getters.userDetails.role;
+      console.log(store.getters.userDetails.role,"role in routes js ")
       if (to.matched.some((record) => record.meta.isAdmin)) {
         if (role === "admin") {
            if(to.path!="/dashboard"){
@@ -144,7 +147,7 @@ router.beforeEach((to, from, next) => {
           next();
         } 
         else if(role === "user"){
-           if(to.path != "/student-dashboard" && to.path!="/personal-info" && to.path!="/applyform" && to.path!="/agreement" && to.path!="/applyform-edit"){
+           if(to.path != "/student-dashboard" && to.path!="/personal-info" && to.path!="/applyform"  && to.path!="/applyform-edit"){
           
            next({ name: "student-dashboard" });
           }

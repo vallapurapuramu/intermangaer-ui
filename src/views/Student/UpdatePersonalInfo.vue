@@ -586,6 +586,9 @@ export default {
 
     async save(){
       this.msg={};
+      let userdetails=JSON.parse(localStorage.getItem("user_details"));
+      console.log(userdetails,"=======");
+      console.log(this.form);
       if (
         this.form.contact != null &&
         this.form.majorId &&

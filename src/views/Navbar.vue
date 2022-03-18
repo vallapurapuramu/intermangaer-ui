@@ -8,7 +8,6 @@
         <router-link :to="{ name: 'dashboard' }" class="border">
           <font-awesome-icon icon="tachometer-alt" />Dashboard
         </router-link>  
-
         <a class="dropdown">
               <b-navbar toggleable >
           <b-navbar-brand href="#"> 
@@ -20,7 +19,6 @@
             </template>
           </b-navbar-toggle>
         </b-navbar-brand>
-
           <b-collapse id="navbar-toggle-collapse"  is-nav>
             <b-navbar-nav center  class="px-sm-4" style="text-align:center !important;">
               <b-nav-item href="#">
@@ -70,15 +68,12 @@
             </b-collapse>
           </b-navbar>
         </a>
-
         <router-link :to="{ name: 'applications' }" class="border">
          <font-awesome-icon icon="print"/>Applications
         </router-link>  
       </b-nav>
     </nav>
-  </div>
-
-  
+  </div>  
 </template>
 
 <script>

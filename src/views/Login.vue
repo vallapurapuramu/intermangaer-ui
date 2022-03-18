@@ -2,11 +2,11 @@
   <b-container fluid class="container">
     <b-row>
       <b-col md="12" class="text-center top-30">
-        <h4>Welcome to Internship Management Application</h4>
+        <h4>Welcome to InternManager Application</h4>
       </b-col>
       <b-col md="4" offset-md="4" class="">
         <div class="login">
-          <h4 class="mt-3 text-center">Log In</h4>
+          <h4 class="mt-3 text-center">Sign In</h4>
           <hr class="mb-0" />
           <b-form class="p-4" @submit.prevent="login">
             <b-form-group
@@ -20,7 +20,7 @@
                 class="input-field"
                 v-model="user.email"
                 type="text"
-                placeholder="Enter username or email id"
+                placeholder="Enter email id"
                 required
               ></b-form-input>
             </b-form-group>
@@ -48,6 +48,7 @@
                 Login
                 <font-awesome-icon icon="sign-in-alt" class="m-t-4" />
               </b-button>
+              <a class="linkbtn" href="register#/register">Register <font-awesome-icon icon="user-plus" class="m-t-4" /></a>
             </div>
           </b-form>
         </div>
@@ -57,9 +58,8 @@
 </template>
 
 <script>
-import Loader from "../components/Utils/Loader.vue";
-import CryptoJS from "crypto-js";
 
+import CryptoJS from "crypto-js";
 export default {
   name: "Login",
   components: {
@@ -67,9 +67,10 @@ export default {
   data() {
     return {
       user: {
-        UserName: "",
+        // UserName: "",
         email: "",
         password: ""
+  
       },
       error: null,
       spin: false
@@ -77,26 +78,25 @@ export default {
   },
   methods: {
     login() {
+
+      //this.$auth.loginWithRedirect();
+
       this.spin = true;
       this.error = null;
       const iv = "sinasinasisinaaa";
-      console.log("store Intern", this.$store);
-      const cipher = CryptoJS.AES.encrypt(this.user.password, CryptoJS.enc.Utf8.parse("82f2ceed4c503896c8a291e560bd4325"), {
-        iv: CryptoJS.enc.Utf8.parse(iv),
+     const cipher = CryptoJS.AES.encrypt(this.user.password, CryptoJS.enc.Utf8.parse("82f2ceed4c503896c8a291e560bd4325"), {
+       iv: CryptoJS.enc.Utf8.parse(iv),
         mode: CryptoJS.mode.CBC
       });
 
-      this.user.password = cipher.toString();
+     this.user.password = cipher.toString();
       this.$store
         .dispatch("retrieveToken", this.user)
         .then(response => {
-          let role = response.data.role;
-          if (role == "admin") {
+          let role = response.data.data.role;
+           if (role == "user") {
             this.loading = false;
-            this.$router.push({ name: "dashboard" });
-          } else if (role == "user") {
-            this.loading = false;
-            this.$router.push({ name: "student-dashboard" });
+            this.$router.push({ name: "faculty" });
           } else if (role == "faculty") {
             this.loading = false;
             this.$router.push({ name: "faculty" });
@@ -118,7 +118,13 @@ export default {
   border-radius: 10px;
   margin-bottom: 69px;
 }
-
+a.linkbtn {
+    color: white;
+    background: #007bff;
+    padding: 6px;
+    margin: 10px;
+    border-radius: 4px;
+}
 .m-t-4 {
   margin-top: 4px;
 }

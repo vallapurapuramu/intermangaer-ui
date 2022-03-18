@@ -2,9 +2,8 @@ import Vue from "vue";
 import _ from "lodash";
 import axios from "axios";
 
-//axios.defaults.baseURL = process.env.API_BASE_URL;
-//axios.defaults.baseURL = "http://127.0.0.1:3838/imapi/api/";
-axios.defaults.baseURL = "/imapi/api/";
+ //axios.defaults.baseURL = "http://127.0.0.1:3333/imapi/api/";
+ axios.defaults.baseURL = "https://intermanager-backend.herokuapp.com/imapi/api/";
 
 const state = {
   token: sessionStorage.getItem("access_token") || null,
@@ -28,9 +27,6 @@ const mutations = {
     state.token = payload.token;
     state.userDetails = payload.userDetails;
   },
-  saveInternshipAgreement:(state) =>{
-    state.userDetails.isagreement =1;
-  },
   destroyUserAuth: (state) => {
     state.token = null;
     state.userDetails = null;
@@ -53,8 +49,8 @@ const actions = {
           ]);
 
           sessionStorage.setItem("access_token", "Bearer " + token);
-          localStorage.setItem("user_details", JSON.stringify(userDetails));
-          console.log(userDetails)
+          localStorage.setItem("user_details", JSON.stringify(userDetails.data));
+          userDetails=userDetails.data;
           context.commit("saveUserAuth", { token, userDetails });
           resolve(response);
         })
@@ -66,13 +62,6 @@ const actions = {
     });
   },
 
-  updateIsAgreement({ commit }) {
-    return new Promise((resolve, reject) => {
-      console.log("in updateIsAgreement");
-      commit("saveInternshipAgreement");
-      resolve();
-    });
-  },
 
   destroyToken({ commit }) {
     return new Promise((resolve, reject) => {

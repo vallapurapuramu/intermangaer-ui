@@ -29,16 +29,8 @@ export default {
   },
  methods:{
     async getData(){
-
-
-      this.isagreement = this.$store.getters.userDetails.isagreement;
-      if(this.isagreement==0)
-      {
-        this.$router.push({ name: "agreement" });
-      }
-      else{
         this.$router.push({ name: "student-dashboard" });
-      }
+      
     },
  }
 };

@@ -113,31 +113,7 @@
         @ok="handleOk(row.item.id)"
         @hide="resetmodify"
       >Are you Sure want to delete this record ? 
-        <!--<b-row>
-          <b-col
-            ><a style="font-weight: bold;">Current Application Status: </a>{{currentStatus}}
-            <br />
-            <a style="font-weight: bold;">Older Comments</a>
-            <br>
-            <ul style="margin-left: 18px">
-              <li v-for="(value, key) in commentsList" :key="key">
-                {{ value.updated }}: {{ value.commentGiven }}
-              </li>
-            </ul></b-col
-          >
-          <br />
-        </b-row>
-        <b-row>
-          <b-col>
-            <label for="exampleFormControlTextarea1" style="font-weight: bold;">Comments</label>
-            <textarea
-              name="comment"
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              v-model="commentData.comments"
-              rows="3"
-            ></textarea></b-col
-        ></b-row>-->
+       
       </b-modal>
           </div>
         </template>
@@ -308,16 +284,7 @@ export default {
         employee: "",
         maindata: {},
       },
-      /**comments: {
-        id: "",
-        title: "",
-        content: "",
-      },
-      reject: {
-        id: "",
-        title: "",
-        content: "",
-      },**/
+      
       modify: {
         id: "",
         title: "",
@@ -353,25 +320,7 @@ export default {
         });
     },
 
-    /**resultQuery() {
-      if (this.selectedValue) {
-        return this.sampleData.filter((item) => {
-          return this.selectedValue
-            .toLowerCase()
-            .split(" ")
-            .every(
-              (v) =>
-                item.name.toLowerCase().includes(v) ||
-                item.major.toLowerCase().includes(v)
-            );
-        });
-      } else {
-        return this.sampleData;
-      }
-    },**/
-    /**rows() {
-      return this.sampleData.length;
-    },**/
+    
   },
 
   methods: {
@@ -419,9 +368,7 @@ export default {
 
     //Check the usage of this method
     handleOk: function (id) {
-      //console.log("id after handle okay....", this.comments.id);
       console.log("id after handle okay....", id);
-      //student/deleteapplicationdata/2
       this.$axios.delete(`student/deleteapplicationdata/${id}`).then(
         (response) => {
           
@@ -433,60 +380,7 @@ export default {
         }
       );
 
-      /**if (this.commentData.comments.length==0) {
-        this.comments.id = null;
-        this.reject.id = null;
-        this.$root.$bvToast.toast(`Please add a valid comment`, {
-          variant: "danger",
-          autoHideDelay: 5000,
-        });
-      } else {
-        if (this.comments.id == id) {
-          console.log("approved");
-          this.status = { applicationStatus: "Approved" };
-        } else if (this.reject.id == id+id.substring(0,2)) {
-          this.status = { applicationStatus: "Rejected" };
-        } else {
-          this.status = { applicationStatus: "Pending" };
-        }
-        console.log("post method...", this.commentData);
-        this.$axios
-          .patch(
-            `update-applications-status/${this.commentData.applicationId}`,
-            this.status
-          )
-          .then(
-            (response) => {
-              console.log(response);
-              this.comments.id = null;
-              this.reject.id = null;
-              this.status = { applicationStatus: null };
-              this.getApplicationData();
-            },
-            (err) => {
-              this.comments.id = null;
-              this.reject.id = null;
-              console.log("----", err);
-            }
-          );
-
-        this.$axios
-          .post("student/comments", this.commentData)
-          .then((response) => {
-            this.$root.$bvToast.toast(`Comment Added successfully`, {
-              variant: "success",
-              autoHideDelay: 5000,
-            });
-            //this.$router.go(-1);
-            console.log("----", response.data);
-            this.commentData.comments = null;
-            this.commentData.applicationId = null;
-          })
-          .catch((error) => {
-            console.log("----", error.response.data);
-          });
-      }
-      this.commentData.comments = null;**/
+     
     },
 
     info(item, index, button) {
