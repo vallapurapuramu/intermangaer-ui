@@ -680,6 +680,10 @@ export default {
   },
 
   methods: {
+    /**
+       * @vuese
+       * This methods is used for offer letters
+       */
     handleFileUpload() {
       this.form.offerLetter = this.$refs.file1.files[0];
     },
