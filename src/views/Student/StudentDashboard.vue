@@ -28,6 +28,10 @@ export default {
     await this.getData();
   },
  methods:{
+   /**
+       * @vuese
+       * This methods used to get the data from student dashboard
+       */
     async getData(){
         this.$router.push({ name: "student-dashboard" });
       

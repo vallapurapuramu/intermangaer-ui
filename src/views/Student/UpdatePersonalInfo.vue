@@ -520,6 +520,10 @@ export default {
   },
 
   methods: {
+    /**
+       * @vuese
+       * This methods is used to accept contact and get the application status of a user
+       */
     acceptNumber() {
       var x = this.form.contact
         .replace(/\D/g, "")
