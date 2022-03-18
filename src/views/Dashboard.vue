@@ -215,6 +215,10 @@ export default {
     }
   },
   methods: {
+    /**
+     * @vuese
+     * This methods gives the intern locations, count and department data
+     */
     async getInternsLocation() {
       await this.$axios.get(`student/locationReport`).then(
         (response) => {

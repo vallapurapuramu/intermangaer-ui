@@ -159,6 +159,10 @@ export default {
   },
 
   methods: {
+    /**
+     * @vuese
+     * This methods gets all the applications with student and employer details
+     */
 
     async getAllApplications() {
       await this.$axios.get(`applications`).then(
