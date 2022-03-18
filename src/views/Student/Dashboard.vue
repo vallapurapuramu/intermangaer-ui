@@ -18,12 +18,24 @@
        },
    
     methods: {
+/**
+       * @vuese
+       * This function is uesd to refresh the table .
+       */      
         refreshTable: function(){
             this.$refs.exampleTable.refresh();
         },
+/**
+       * @vuese
+       * This function is uesd to set the new page size by using the example table.
+       */         
         setNewPageSize:function(){
             this.$refs.exampleTable.setPageSize(1);
         },
+/**
+       * @vuese
+       * This function is used to add the item using the name and the values.
+       */         
         addItem: function () {
             const item = {
                 "id": this.values.length + 1,
@@ -31,15 +43,31 @@
             };
             this.values.push(item);
         },
+/**
+       * @vuese
+       * This function is uesd to filter using the toggle.
+       */         
         toggleFilter: function () {
             this.showFilter = !this.showFilter;
         },
+/**
+       * @vuese
+       * This function is uesd to picker using the toggle.
+       */         
         togglePicker: function () {
             this.showPicker = !this.showPicker;
         },
+/**
+       * @vuese
+       * This function is uesd to select using the toggle.
+       */         
         toggleSelect: function () {
             this.showSelect = !this.showSelect;
         },
+/**
+       * @vuese
+       * This function is uesd to pagination using the toggle.
+       */         
         togglePagination: function () {
             this.paginated = !this.paginated;
         }
