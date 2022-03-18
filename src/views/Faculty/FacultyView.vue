@@ -466,6 +466,10 @@ export default {
   },
 
   methods: {
+    /**
+     * @vuese
+     * This methods is used to get application
+     */
     async getApplicationData() {
       this.userId = this.$store.getters.userDetails.id;
       await this.$axios.get(`applications/${this.userId}`).then(
