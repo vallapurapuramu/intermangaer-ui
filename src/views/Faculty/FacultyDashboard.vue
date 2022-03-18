@@ -18,6 +18,10 @@
        },
    
     methods: {
+      /**
+       * @vuese
+       * This methods is used to refresh the table, starting the newpage and item
+       */
         refreshTable: function(){
             this.$refs.exampleTable.refresh();
         },

@@ -66,6 +66,10 @@ export default {
     },
 
     methods:{
+      /**
+       * @vuese
+       * This methods is used to get name
+       */
       getName(){
         this.username1= this.$store.getters.userDetails.firstname;
         return this.username1
