@@ -464,8 +464,7 @@ export default {
       return this.sampleData.length;
     },
   },
-
-  methods: {
+  methods:{
     /**
      * @vuese
      * This methods is used to get application
