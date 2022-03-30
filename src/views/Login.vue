@@ -49,6 +49,10 @@
                 <font-awesome-icon icon="sign-in-alt" class="m-t-4" />
               </b-button>
               <a class="linkbtn" href="register#/register">Register <font-awesome-icon icon="user-plus" class="m-t-4" /></a>
+              
+            </div>
+            <div>
+            <a class="linkbtn"  href="/githublogin#/githublogin">Login with github <font-awesome-icon icon="user-plus" class="m-t-4" /></a>
             </div>
           </b-form>
         </div>

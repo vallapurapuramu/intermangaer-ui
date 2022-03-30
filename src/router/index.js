@@ -10,6 +10,7 @@ import Faculty from "../views/Faculty/Faculty.vue";
 import StudentDashboard from "../views/Student/StudentDashboard.vue";
 import Applications from "../views/Applications.vue";
 import Register from "../views/Register.vue";
+import GithubLogin from "../views/GithubLogin.vue";
 import { isBoolean } from 'lodash';
 import { name } from 'store/storages/cookieStorage';
 
@@ -29,6 +30,14 @@ const routes = [
     path: "/register",
     name: "register",
     component: Register,
+    meta: {
+      requiresVisitor: true,
+    }
+  },
+  {
+    path: "/githublogin",
+    name: "githublogin",
+    component: GithubLogin,
     meta: {
       requiresVisitor: true,
     }

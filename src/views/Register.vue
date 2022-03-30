@@ -130,7 +130,6 @@ export default{
        */
         async register(){
         await this.$axios.post("auth/register",this.user).then((response)=>{
-            console.log("edited form data.....",this.user);
           this.$root.$bvToast.toast(`Registered  successfully`, {
             variant: "success",
             autoHideDelay: 5000,
