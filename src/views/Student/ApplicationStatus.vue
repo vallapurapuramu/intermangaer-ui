@@ -450,11 +450,17 @@ export default {
   },
 
   methods: {
-
+/**
+       * @vuese
+       * This methods edit the application by taking the id as an input.
+       */
     editapplication(id){
       this.$router.push({ name: "applyform", params: { id: id} });
     },
-
+/**
+       * @vuese
+       * This method get the application data by using the userId details.
+       */
     async getApplicationData() {
       this.userId = this.$store.getters.userDetails.id;
       await this.$axios.get(`/student/applications/${this.userId}`).then(
@@ -472,7 +478,10 @@ export default {
         }
       );
     },
-
+/**
+       * @vuese
+       * This methods get the comments by using the studentID.
+       */
     async getComments(id) {
       await this.$axios.get(`student/comments/${id}`).then(
         (response) => {
@@ -493,7 +502,10 @@ export default {
         }
       );
     },
-
+/**
+       * @vuese
+       * This is a function used to handleOk for adding the comments when reject or using the axios by using the this method.
+       */
     handleOk: function () {
       if (this.commentData.comments == null) {
         this.comments.id = null;
@@ -545,7 +557,10 @@ export default {
           });
       }
     },
-
+/**
+       * @vuese
+       * This methods where you will have all the Information regarding the item, index and button by passing filteredItems gets the resetmodify, resetdetails.
+       */
     info(item, index, button) {
       this.details.title = "Application Details";
       this.commentsList = [];
@@ -591,7 +606,10 @@ export default {
       this.modify.title = "";
       this.modify.content = "";
     },
-
+/**
+       * @vuese
+       * This methods comments using the item, index and button refering the commentData and resetcomments.
+       */
     comment(item, index, button) {
       this.comments.id = "comments-modal";
       if (item) {   
@@ -605,7 +623,10 @@ export default {
       this.comments.title = "";
       this.comments.content = "";
     },
-
+/**
+       * @vuese
+       * This method is used to comment when the application is Rejected and resetreject using the item, index and button.
+       */
     rejectComment(item, index, button) {
       if (item) {
         this.reject.id = "reject-modal";
@@ -619,7 +640,10 @@ export default {
       this.reject.title = "";
       this.reject.content = "";
     },
-
+/**
+       * @vuese
+       * This method is used to go to the nextPage by passing the event as the parameter.
+       */
     nextPage(event) {
       this.paginate.limit = 2;
     },

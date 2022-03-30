@@ -565,7 +565,10 @@ export default {
     //await this.clicked();
   },
   methods:{
-
+/**
+       * @vuese
+       * This methods is used to save the data. if any chages has made in the application like creating etc.
+       */
   async save(){
     console.log("edited form data.....",this.form);
       await this.$axios.post("student/applicationdata", this.form)
@@ -585,11 +588,17 @@ export default {
   /*async disable() { 
             $("#GFG :input").prop("disabled", true);
         },*/
-    
+/**
+       * @vuese
+       * This is the method used to enable or disable according to the given input.
+       */    
   async enable() { 
             $("#GFG :input").prop("disabled", false);
         },
-
+/**
+       * @vuese
+       * This method gets the user details by using the user id and checks the response data and employer name in the internship..
+       */
   async  clicked(){
 
       this.userId = this.$store.getters.userDetails.id;
