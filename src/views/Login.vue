@@ -51,7 +51,7 @@
               <a class="linkbtn" href="register#/register">Register <font-awesome-icon icon="user-plus" class="m-t-4" /></a>
               
             </div>
-            <div>
+            <div class="btn-center">
             <a class="linkbtn"  href="/githublogin#/githublogin">Login with github <font-awesome-icon icon="user-plus" class="m-t-4" /></a>
             </div>
           </b-form>
