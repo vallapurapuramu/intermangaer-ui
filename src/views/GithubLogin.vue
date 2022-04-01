@@ -24,15 +24,21 @@
 
 
             
-      </div>
       
-      <a class="linkbtn" href="login#/login">Login <font-awesome-icon icon="user-plus" class="m-t-4" /></a>
-
       <h4>Test Credentails</h4>
       <pre>
-      <b>Username</b> advj
-      <b>Password</b> asgvd
+      <p><u>Faculty Credentails</u></p>
+      <b>Username:</b> faculty@gmail.com
+      <b>Password:</b> 1234
+      <p><u>Student Credentails</u></p>
+      <b>Username:</b> student@gmail.com
+      <b>Password:</b> 1234
+
       </pre>
+      </div>
+      <div class="btn-center">
+      <a class="linkbtn" href="login#/login">Login <font-awesome-icon icon="user-plus" class="m-t-4" /></a>
+</div>
     </div>
   
     </b-container>
