@@ -1,8 +1,8 @@
 <template>
   <div class="header">
     <b-navbar toggleable="lg" class="navbarHeader" fixed>
-      <b-navbar-brand href="https://www.nwmissouri.edu/" class="brand" target="_blank"
-        ><img src="../../assets/n-large.png"  alt="ltc-logo"
+      <b-navbar-brand href="#" class="brand" target="_blank"
+        ><img src="../../assets/n-large.png"  alt="Intern-logo"
       /></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -89,6 +89,7 @@ export default {
   margin: 0px;
   padding: 0px;
   z-index: 1;
+  width: 20;
 }
 .navbarHeader {
   background-color: #006747;
