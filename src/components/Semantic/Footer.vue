@@ -8,7 +8,9 @@
 
       <b-navbar-brand href="https://github.com/vallapurapuramu/GDP02-Sec01-Group03-InternManager/wiki">WIKI</b-navbar-brand>
 
-      <b-navbar-brand href="https://app.codacy.com/gh/vallapurapuramu/intermangaer-ui/dashboard">WIKI</b-navbar-brand>
+      <b-navbar-brand href="https://app.codacy.com/gh/vallapurapuramu/intermangaer-ui/dashboard">Code Coverage</b-navbar-brand>
+
+      
 
       
 
