@@ -286,16 +286,7 @@
             Status: </a>{{ details.maindata.status }}
             <br />
             <br />
-            <div 
-            style="width: fit-content;"><b-button block
-            style="padding:5px 10px 5px 10px;"
-            variant="primary"
-            size="md"
-            @click="downloadPDF(details.maindata.applicationId)"
-            class="mr-1">
-              Download Resume
-            </b-button></div>
-            <br />
+           
             <a>Comments</a>
             <ul style="margin-left: 18px">
               <li v-for="(value, key) in commentsList" :key="key">
