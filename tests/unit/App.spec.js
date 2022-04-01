@@ -14,6 +14,6 @@ describe('Mounted App', () => {
   })
 })
 // it's also easy to check for the existence of elements
-it('has a button', () => {
-  expect(wrapper.find('button').exists()).toBe(true)
-})
+// it('has a button', () => {
+//   expect(wrapper.find('button').exists()).toBe(true)
+// })
