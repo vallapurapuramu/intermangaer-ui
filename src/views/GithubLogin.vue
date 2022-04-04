@@ -13,10 +13,9 @@
             <h4>We tried implementing login with Github using Auth0. But we couldnt able to do it  </h4>
             <p>
             <ul>
-             <li> Our application need to authorize different user based upon the roles such as user, faculty.</li>
+             <li>Inorder to process the request we required personal data of the user so we have used through registeration page</li>
               <li>We classify the there dashboard based upon the role which is not possible when considering with github authorization we can't do that .</li>
-              <li>Instead we do username-password authorization where generated jwt token(bearer token) </li>
-              <li>we also concentrated on the user details security by encrypting with algorithm SHA-256 where we used on crypto js package for that.</li>
+              <li>We have implement password encryption and decryption so there is no need to worry about the security</li>
               <li>while we are successful in implementing the functionality using Vue.js and Adonis.js libraries </li>
               </ul>
               
