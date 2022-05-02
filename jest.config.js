@@ -8,9 +8,10 @@ module.exports = {
   ],
   transform: {
     "^.+\\.vue$": "vue-jest",
+    //"^.+\\.vue$": "babel-jest",
     ".*\\.(js)$": "babel-jest"
   },
   collectCoverage: true,
-  collectCoverageFrom: ["*/.{js}", "!*/node_modules/*"],
+  collectCoverageFrom: ["**/*.{js,vue}", "!**/node_modules/**"],
   coverageDirectory: "../testcoverage-intermanager",
 };

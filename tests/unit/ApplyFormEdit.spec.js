@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import applyform from "../../src/views/ApplyFormEdit.vue";
 
-describe("Login.vue", () => {
+describe("applyform", () => {
     const wrapper = mount(applyform);
 
   it("testing the page is addEvent  ", () => {

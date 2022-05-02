@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import applications from "../../src/views/Applications.vue";
 
-describe("Login.vue", () => {
+describe("applications", () => {
     const wrapper = mount(applications);
 
   it("testing the page is addEvent  ", () => {

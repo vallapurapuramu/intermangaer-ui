@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import register from "../../src/views/Register.vue";
 
-describe("Login.vue", () => {
+describe("register", () => {
     const wrapper = mount(register);
 
   it("testing the page is addEvent  ", () => {
